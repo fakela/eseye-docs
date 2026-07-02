@@ -1,0 +1,28 @@
+# Table of contents
+
+## Getting started
+
+* [Getting Started](getting-started/getting-started.md)
+* [About the AnyNet Federation](getting-started/any-net-federation.md)
+* [About the Home Location Register (HLR)](getting-started/hlr.md)
+* [About the Visitor Location Register (VLR)](getting-started/vlr.md)
+* [IoT Wireless Technologies](getting-started/iot-wireless-technologies.md)
+* [Understanding IMSI rotation vs IMSI switching](getting-started/imsirotation-switching.md)
+* [Understanding localisation](getting-started/localisation.md)
+* [Understanding multi-IMSI functionality](getting-started/multi-imsi.md)
+* [Understanding roaming](getting-started/roaming.md)
+* [Understanding the IMSI rotation and switching process](getting-started/how-imsirotate-switch-works.md)
+* eSIM
+  * [About eSIM technology](getting-started/e-sim/esim.md)
+  * [About eUICC SIM profiles](getting-started/e-sim/profiles.md)
+  * [About Remote SIM Provisioning (RSP)](getting-started/e-sim/remote-sim-provisioning-overview.md)
+  * [Bootstrap profile vs operational profile comparison](getting-started/e-sim/bootstrap-vsoperational-profiles.md)
+  * [eUICC overview](getting-started/e-sim/euicc.md)
+  * [Modules supporting Remote SIM Provisioning (RSP)](getting-started/e-sim/modules-supporting-rsp.md)
+  * [Understanding the GSMA RSP M2M general architecture](getting-started/e-sim/remote-sim-provisioning.md)
+* SMS
+  * [Troubleshooting SMS](getting-started/sms/troubleshooting-sms.md)
+  * [Understanding SMS](getting-started/sms/understanding-sms.md)
+* Test profiles
+  * [Eseye test profile](getting-started/test-profiles/eseye-test-profile.md)
+  * [GSMA Generic eUICC Test Profile](getting-started/test-profiles/gsma-generic-euicc-test-profile.md)
