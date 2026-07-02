@@ -1,5 +1,7 @@
 # Table of contents
 
+* [Eseye Docs Migration Test](README.md)
+
 ## Getting started
 
 * [Getting Started](getting-started/getting-started.md)
@@ -12,7 +14,7 @@
 * [Understanding multi-IMSI functionality](getting-started/multi-imsi.md)
 * [Understanding roaming](getting-started/roaming.md)
 * [Understanding the IMSI rotation and switching process](getting-started/how-imsirotate-switch-works.md)
-* eSIM
+* [eSIM](getting-started/esim/README.md)
   * [About eSIM technology](getting-started/e-sim/esim.md)
   * [About eUICC SIM profiles](getting-started/e-sim/profiles.md)
   * [About Remote SIM Provisioning (RSP)](getting-started/e-sim/remote-sim-provisioning-overview.md)
@@ -20,9 +22,9 @@
   * [eUICC overview](getting-started/e-sim/euicc.md)
   * [Modules supporting Remote SIM Provisioning (RSP)](getting-started/e-sim/modules-supporting-rsp.md)
   * [Understanding the GSMA RSP M2M general architecture](getting-started/e-sim/remote-sim-provisioning.md)
-* SMS
+* [SMS](getting-started/sms/README.md)
   * [Troubleshooting SMS](getting-started/sms/troubleshooting-sms.md)
   * [Understanding SMS](getting-started/sms/understanding-sms.md)
-* Test profiles
+* [Test profiles](getting-started/test-profiles/README.md)
   * [Eseye test profile](getting-started/test-profiles/eseye-test-profile.md)
-  * [GSMA Generic eUICC Test Profile](getting-started/test-profiles/gsma-generic-euicc-test-profile.md)
+  * [GSMA Generic eUICC Test Profile](getting-started/test-profiles/gsma-generic-euicc-test-profile.md)
