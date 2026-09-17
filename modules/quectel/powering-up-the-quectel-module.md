@@ -1,0 +1,5 @@
+# Powering up the Quectel module
+
+The embedded application runs on generic Quectel module devices, so no hardware interfacing is specified except for PWRKEY and the main AT UART and DTR line if power control is required.
+
+Do not disconnect the power supply to the Quectel module at any time, as the module requires power at all times, even during sleep mode.
