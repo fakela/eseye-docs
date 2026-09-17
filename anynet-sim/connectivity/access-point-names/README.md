@@ -1,6 +1,6 @@
 # Access Point Names
 
-An Access Point Name (APN) defines the network path between a mobile network and an IP network (the public internet or a private network, for example, Eseye's [MPLS](https://app.gitbook.com/s/hPiB0Z0YdVhl1D9teuS7/) network). Each Eseye APN consists of:
+An Access Point Name (APN) defines the network path between a mobile network and an IP network (the public internet or a private network, for example, Eseye's [MPLS](https://app.gitbook.com/o/ewPVTh5Hmb64cZjruxy6/s/hPiB0Z0YdVhl1D9teuS7/) network). Each Eseye APN consists of:
 
 * Pre-existing configurations between Eseye and the operator to enable a connection between the networks
 * A RADIUS server and billing function

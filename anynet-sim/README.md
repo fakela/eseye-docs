@@ -42,7 +42,7 @@ The specifications and supported features for the AnyNet+ SIM versions are provi
 
 {% file src=".gitbook/assets/8791-ES7xxx-Datasheet.pdf" %}
 
-{% file src=".gitbook/assets/8590-ES56xx-Datasheet (1).pdf" %}
+{% file src=".gitbook/assets/8590-ES56xx-Datasheet.pdf" %}
 
 Each version may have multiple variants identified by unique SIM number prefixes. The following table provides additional notes for differences between the variants.
 

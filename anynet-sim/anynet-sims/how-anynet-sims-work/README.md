@@ -6,12 +6,12 @@ This topic helps you understand Eseye's products and services, and where to find
 
 This help is divided up into the following sections:
 
-* [Welcome to Eseye Documentation](https://app.gitbook.com/s/irOtd1AXvHgo84Vp1oQ2/ "mention") – provides an overview of the Eseye products and services and contains links to more detailed information elsewhere in this help.
-* [Hardware](https://app.gitbook.com/s/RChB1Oxa6heurAUHLp6P/ "mention") – describes Eseye's SIM solutions, HERA router products and third-party modem/module integrations.
+* [Docs landing page](https://app.gitbook.com/o/ewPVTh5Hmb64cZjruxy6/s/irOtd1AXvHgo84Vp1oQ2/ "mention") – provides an overview of the Eseye products and services and contains links to more detailed information elsewhere in this help.
+* [Hera landing page](https://app.gitbook.com/o/ewPVTh5Hmb64cZjruxy6/s/RChB1Oxa6heurAUHLp6P/ "mention") – describes Eseye's SIM solutions, HERA router products and third-party modem/module integrations.
 * Cloud services best practices – describes the third-party integrations that Eseye supports, and how to integrate your cloud services into the Eseye network.
 * [eseye-connectivity-overview.md](../../connectivity/eseye-connectivity-overview.md "mention") – describes how Eseye connects and transfers data between IoT devices, Eseye's data network and third-party cloud services.
-* [Infinity IoT Platform](https://app.gitbook.com/s/SfHTmjIGpgngY8hr2pZJ/ "mention") – describes how to manage your IoT devices and SIMs, view reports and invoices and manage access to Eseye's Infinity web interfaces.
-* [Overview](https://app.gitbook.com/s/0xQKujz8nVihyxgGvU7r/ "mention") – describes how to use Eseye's application programming interfaces (APIs) to integrate with third-party services.
+* [Infinity Landing page](https://app.gitbook.com/o/ewPVTh5Hmb64cZjruxy6/s/SfHTmjIGpgngY8hr2pZJ/ "mention") – describes how to manage your IoT devices and SIMs, view reports and invoices and manage access to Eseye's Infinity web interfaces.
+* [API Reference](https://app.gitbook.com/o/ewPVTh5Hmb64cZjruxy6/s/0xQKujz8nVihyxgGvU7r/ "mention") – describes how to use Eseye's application programming interfaces (APIs) to integrate with third-party services.
 
 ## IoT technology
 

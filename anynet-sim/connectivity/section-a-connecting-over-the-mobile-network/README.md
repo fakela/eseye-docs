@@ -48,7 +48,7 @@ Data needs a direction of flow, and as such it needs to know where it has come f
 
 Each device connects to the mobile network through a modem across a [radio access network](https://en.wikipedia.org/wiki/Radio_access_network). For more information, see [About Radio Access Networks](../../anynet-sims/how-anynet-sims-work/iot-wireless-technologies.md).
 
-Devices use SIMs to connect to a network. For more information, see [AnyNet SIMs](https://app.gitbook.com/s/zlTL8FVu6GaQkB5i1TRY/).
+Devices use SIMs to connect to a network. For more information, see [AnyNet SIMs](https://app.gitbook.com/o/ewPVTh5Hmb64cZjruxy6/s/zlTL8FVu6GaQkB5i1TRY/).
 
 Devices can use IMSI technology to ensure optimum connectivity. For more information, see [Understanding multi-IMSI functionality](../../anynet-sims/how-anynet-sims-work/understanding-multi-imsi-functionality.md).
 
