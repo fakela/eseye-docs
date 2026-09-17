@@ -22,7 +22,6 @@
   * [Modules supporting Remote SIM Provisioning (RSP)](anynet-sims/esim-and-remote-provisioning/modules-supporting-remote-sim-provisioning-rsp.md)
   * [Eseye test profile](anynet-sims/esim-and-remote-provisioning/eseye-test-profile.md)
   * [GSMA Generic eUICC Test Profile](anynet-sims/esim-and-remote-provisioning/gsma-generic-euicc-test-profile.md)
-  * [APN configuration when changing eSIM profiles under SGP.32](anynet-sims/esim-and-remote-provisioning/apn-configuration-when-changing-esim-profiles-under-sgp-32.md)
 * [SMS](anynet-sims/sms/README.md)
   * [Understanding the SMS buffer](anynet-sims/sms/understanding-the-sms-buffer.md)
   * [Frequency bands](anynet-sims/sms/frequency-bands.md)
