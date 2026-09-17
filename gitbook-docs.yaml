@@ -1,0 +1,193 @@
+$schema: https://api.gitbook.com/gitbook-docs.yaml
+site:
+  title: Eseye Docs
+  structure:
+    - type: section
+      key: section-8
+      title: Get Started
+      path: docs-landing-page
+      description: ""
+      default: true
+      children:
+        - type: space
+          key: space-10
+          title: Docs landing page
+          path: docs-landing-page
+          default: true
+          content:
+            directory: ./docs-landing-page
+    - type: section
+      key: section-2
+      title: Eseye API
+      path: api-reference
+      description: ""
+      children:
+        - type: space
+          key: space-1
+          title: Eseye API
+          path: api-reference
+          default: true
+          content:
+            directory: ./api-reference
+        - type: space
+          key: space-2
+          title: Legacy
+          path: api-reference-legacy
+          content:
+            directory: ./api-reference/api-reference-legacy
+        - type: space
+          key: space-7
+          title: Eseye API (PT-BR)
+          path: api-reference-pt-br
+          content:
+            directory: ./api-reference/api-reference-pt-br
+            language: pt-br
+    - type: section-group
+      key: section-group-1
+      title: Hardware
+      children:
+        - type: section
+          key: section-4
+          title: Hera Routers
+          path: copy-of-hardware-landing-page
+          description: ""
+          children:
+            - type: space
+              key: space-3
+              title: Hera landing page
+              path: copy-of-hardware-landing-page
+              default: true
+              content:
+                directory: ./copy-of-hardware-landing-page
+        - type: section
+          key: section-1
+          title: Hera 204
+          path: hera204
+          description: ""
+          children:
+            - type: space
+              key: space-4
+              title: Hera 204
+              path: hera-204
+              default: true
+              content:
+                directory: ./hera204/hera-204
+        - type: section
+          key: section-3
+          title: Hera 604
+          path: hera604
+          description: ""
+          children:
+            - type: space
+              key: space-5
+              title: Hera 604
+              path: hera-604
+              default: true
+              content:
+                directory: ./hera604/hera-604
+    - type: section
+      key: section-7
+      title: AnyNet SIM
+      path: anynet-sim
+      children:
+        - type: space
+          key: space-9
+          title: AnyNet SIM
+          path: anynet-sim
+          default: true
+          content:
+            directory: ./anynet-sim
+    - type: section
+      key: section-5
+      title: SmartConnect
+      path: smartconnect
+      children:
+        - type: space
+          key: space-6
+          title: SmartConnect
+          path: smartconnect
+          default: true
+          content:
+            directory: ./smartconnect
+            language: en
+    - type: section-group
+      key: section-group-2
+      title: Infinity
+      children:
+        - type: section
+          key: section-10
+          title: Infinity Landing page
+          path: infinity-landing-page
+          description: ""
+          children:
+            - type: space
+              key: space-12
+              title: Infinity Landing page
+              path: infinity-landing-page
+              default: true
+              content:
+                directory: ./infinity-landing-page
+        - type: section
+          key: section-6
+          title: Infinity
+          path: infinity
+          description: ""
+          children:
+            - type: space
+              key: space-8
+              title: Infinity
+              path: infinity
+              default: true
+              content:
+                directory: ./infinity
+        - type: section
+          key: section-9
+          title: InfinityClassic
+          path: infinityclassic
+          description: ""
+          children:
+            - type: space
+              key: space-11
+              title: InfinityClassic
+              path: infinityclassic
+              default: true
+              content:
+                directory: ./infinityclassic
+                language: en
+    - type: section
+      key: section-11
+      title: Resources
+      path: resources
+      children:
+        - type: space
+          key: space-13
+          title: Landing Page
+          path: landing-page
+          default: true
+          content:
+            directory: ./resources/landing-page
+    - type: section
+      key: section-12
+      title: Modules
+      path: modules
+      description: ""
+      children:
+        - type: space
+          key: space-14
+          title: Modules
+          path: modules
+          default: true
+          content:
+            directory: ./modules
+    - type: section
+      key: section-13
+      title: Glossary
+      path: glossary
+      children:
+        - type: space
+          key: space-15
+          title: Glossary
+          path: glossary
+          default: true
+          content:
+            directory: ./glossary
