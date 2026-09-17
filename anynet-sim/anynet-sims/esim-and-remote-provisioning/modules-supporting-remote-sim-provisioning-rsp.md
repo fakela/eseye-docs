@@ -1,0 +1,41 @@
+# Modules supporting Remote SIM Provisioning (RSP)
+
+We have tested the following modules to ensure they support Remote SIM Provisioning (RSP).
+
+{% hint style="info" %}
+How you implement these modules in your device will influence remote SIM provisioning. For more information, see [Device configuration best practices](../../connectivity/device-configuration-best-practices.md).
+{% endhint %}
+
+| Manufacturer    | Model              | Verizon- certified | Additional resources                                                                                                            |
+| --------------- | ------------------ | ------------------ | ------------------------------------------------------------------------------------------------------------------------------- |
+| Google          |                    |                    |                                                                                                                                 |
+|                 | G011C              |                    |                                                                                                                                 |
+|                 | G1AZG              |                    |                                                                                                                                 |
+|                 | GD1YQ              |                    |                                                                                                                                 |
+| Nordic          |                    |                    |                                                                                                                                 |
+|                 | nRF9160            | ✓                  | - https://www.nordicsemi.com/Products/nRF9160                                                                                   |
+| OPPO            |                    |                    |                                                                                                                                 |
+|                 | CPH2179            |                    |                                                                                                                                 |
+| Quectel         |                    |                    |                                                                                                                                 |
+|                 | BG95-M1            | ✓                  | - https://www.quectel.com/product/lpwa-bg95-m1                                                                                  |
+|                 | BG95-M2            | ✓                  | - https://www.quectel.com/product/lpwa-bg95-m2                                                                                  |
+|                 | BG95-M3            | ✓                  | - https://www.quectel.com/product/lpwa-bg95-m3                                                                                  |
+|                 | BG95-M5            | ✓                  |                                                                                                                                 |
+|                 | BG96               | ✓                  | - https://www.quectel.com/product/lpwa-bg96-cat-m1-nb1-egprs - https://www.quectel.com/product/lpwa-bg96-cat-m1-nb1-egprs-mpcie |
+|                 | EC25-A             | ✓                  |                                                                                                                                 |
+|                 | EG25-G             | ✓                  | - https://www.quectel.com/product/lte-eg25-g - Specification sheet                                                              |
+|                 | EG95               | ✓                  |                                                                                                                                 |
+| Sierra Wireless |                    |                    |                                                                                                                                 |
+|                 | EM7411             | ✓                  | - https://www.sierrawireless.com/iot-solutions/products/em7411/                                                                 |
+|                 | MC7304             |                    |                                                                                                                                 |
+|                 | RC7620             |                    |                                                                                                                                 |
+| Telit           |                    |                    |                                                                                                                                 |
+|                 | LE910C1-EUX        |                    |                                                                                                                                 |
+|                 | LE910C4-WWXD       | ✓                  |                                                                                                                                 |
+|                 | ME910C1-WW         | ✓                  |                                                                                                                                 |
+| Thales          |                    |                    |                                                                                                                                 |
+|                 | PLS63-W            | ✓                  |                                                                                                                                 |
+| uBlox           |                    |                    |                                                                                                                                 |
+|                 | LARA-L6004D-00B-00 | ✓                  |                                                                                                                                 |
+|                 | SARA-R410M-02B-04  | ✓                  | - https://www.u-blox.com/en/product/sara-r4-series                                                                              |
+|                 | SARA-R412M-02B-02  | ✓                  |                                                                                                                                 |

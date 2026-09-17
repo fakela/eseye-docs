@@ -1,0 +1,12 @@
+# About the maximum transmission unit
+
+The maximum transmission unit (MTU) is a network configuration parameter that restricts the size of the largest data packet or frame size that network devices (such as routers, switches, or network interface cards) can transmit over a network in a single transmission. It is typically configured individually on each network device participating in the network.
+
+When two network devices communicate with each other, they negotiate the maximum size of the data packets or frames they can exchange, based on their configured MTU values. This reduces the risk fragmentation or other issues during data transmission.
+
+The default MTU can vary depending on the network technology, operating system or device using the network. For Ethernet-based networks (including wired Ethernet and WiFi) the standard MTU setting is 1500 bytes. However, for cellular networks this value may be lower because of the following:
+
+* Radio link efficiency: Cellular networks rely on wireless radio links to transmit data. The radio channel introduces certain overhead and limitations, such as signal interference and signal propagation characteristics. Lowering the MTU may optimise data transmission efficiency and reduce the risk of errors or retransmissions.
+* Network overhead: Cellular networks often have additional protocol overhead compared to wired networks, including encapsulation, encryption, and various signalling protocols used in wireless communication. A smaller MTU value helps accommodate this additional overhead without exceeding the maximum payload size. For more information about encapsulation, see [the MPLS overview](../section-a-connecting-over-the-mobile-network/section-b-connecting-over-eseyes-mpls-network.md).
+* Fragmentation and latency: Lowering the MTU can reduce the likelihood of packet fragmentation, which occurs when a packet is larger than the maximum size allowed by a particular network. Fragmentation can introduce latency and inefficiencies in data transmission, so a lower MTU helps mitigate this issue. For more information, see [the latency measurement guide](../monitoring-and-diagnostics/measuring-latency.md).
+* Network provider specifics: Different network providers may have their own infrastructure, technical requirements, and optimisation strategies. They might have determined that a lower MTU value is optimal for their specific network architecture and performance goals. We recommend consulting the network provider documentation to find out their chosen MTU values.
