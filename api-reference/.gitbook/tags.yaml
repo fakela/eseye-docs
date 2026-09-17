@@ -1,0 +1,6 @@
+- tag: paid-service
+  label: Paid service
+  color: $primary
+- tag: paid-add-on
+  label: Paid add-on
+  color: $primary
