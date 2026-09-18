@@ -10,38 +10,27 @@ Manages the LwM2M protocol, which enables you to add, delete and update LwM2M re
 
 #### Example
 
+```
 AT+ETMLW="add",-1,"/32769/0/1","Integer",123
-
 OK
-
 +ETMLW: 0,"/32769/0/1","ADD",0
+```
 
+```
 AT+ETMLW="add",-1,"/32769/1/1","String","Temp: 17°C"
-
 OK
-
 +ETMLW: 0,"/32769/1/1","ADD",-12
+```
 
+```
 AT+ETMLW="add",-1,"/32769/1/1","Integer",17
-
 OK
-
 +ETMLW: 1,"/32769/1/1","ADD",0
+```
 
+```
 AT+ETMLW?
-
 +ETMLW: 0,"/32769/0/1","integer","ready"
-
 +ETMLW: 1,"/32769/1/1","integer","ready"
-
 OK
-
-## Where to next?
-
-* Connecting the Quectel BGxx module to a LwM2M server
-* Connecting to the cloud
-* About AnyNet SMARTconnect™
-* Management AT commands
-* +ETM Unsolicited Response Codes (URCs)
-* MQTT AT commands
-* General AT Commands
+```

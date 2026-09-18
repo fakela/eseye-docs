@@ -1,6 +1,6 @@
 # ETMCFG – read and write configuration file values
 
-Read and write configuration file values. For information about the configuration file parameters, see Using the AnyNet SMARTconnect™ configuration file.
+Read and write configuration file values. See [Using the AnyNet SMARTconnect™ configuration file](../../getting-started/using-the-anynet-smartconnect-tm-configuration-file.md) for parameter details.
 
 | Type  | Syntax                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             | Response                                                                                                                                                              |
 | ----- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -9,42 +9,34 @@ Read and write configuration file values. For information about the configuratio
 
 #### Examples
 
+```
 AT+ETMCFG="get","mqtt","port"
-
 +ETMCFG: 8883
-
 OK
+```
 
+```
 AT+ETMCFG="get","mqtt","urcautoformat"
-
 +ETMCFG: 1
-
 OK
+```
 
+```
 AT+ETMCFG="mqtt","keepalive",1800
-
 OK
+```
 
-AT+ETMCFG="operation","time\_format","%Y/%m/%d %T%z"
-
+```
+AT+ETMCFG="operation","time_format","%Y/%m/%d %T%z"
 OK
+```
 
-AT+ETMCFG="mqtt","enable\_msg\_tokens",1
-
+```
+AT+ETMCFG="mqtt","enable_msg_tokens",1
 OK
+```
 
+```
 AT+ETMCFG="save"
-
 OK
-
-## Where to next?
-
-* AnyNet SMARTconnect™ AT Commands
-* MQTT AT commands
-* Sending data from your thing to the cloud
-* Sending data from the cloud to your thing
-* +EMQ Unsolicited Response Codes (URCs)
-* Management AT commands
-* +ETM Unsolicited Response Codes (URCs)
-* MQTT Rx Queue
-* General AT Commands
+```

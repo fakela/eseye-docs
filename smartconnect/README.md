@@ -13,7 +13,7 @@ AnyNet SMARTconnect™ is a suite of software tools that establishes and maintai
 AnyNet SMARTconnect™ supports the MQTT protocol.
 {% endhint %}
 
-Configure the module with the [using-the-anynet-smartconnect-tm-configuration-file.md](getting-started/using-the-anynet-smartconnect-tm-configuration-file.md "mention"). For software and firmware maintenance, see [system-lifecycle-management.md](getting-started/system-lifecycle-management.md "mention").
+Configure the module with [Using the AnyNet SMARTconnect™ configuration file](getting-started/using-the-anynet-smartconnect-tm-configuration-file.md). For software and firmware maintenance, see [System lifecycle management](getting-started/system-lifecycle-management.md).
 
 ## Why use AnyNet SMARTconnect™?
 

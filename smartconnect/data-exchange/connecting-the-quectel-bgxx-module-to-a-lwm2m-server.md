@@ -9,17 +9,21 @@ AnyNet SMARTconnect™ then obtains the certificates and data required to connec
 
 ## About LwM2M certificates
 
-After the bootstrap procedure completes, for secure mode, AnyNet SMARTconnect™ saves the following files in the datatx folder:
+After the bootstrap procedure completes, for secure mode, AnyNet SMARTconnect™ saves these files in the `datatx` folder:
 
-* lwm2m\_server\_public\_key – the x509 server certificate
-* lwm2m\_public\_key – the LwM2M public certificate
-* lwm2m\_secret\_key – the LwM2M public private key
-*   lwm2m\_url – the LwM2M server URL, in this format: coap(s)://:
+* `lwm2m_server_public_key` – the x509 server certificate
+* `lwm2m_public_key` – the LwM2M public certificate
+* `lwm2m_secret_key` – the LwM2M public private key
+*   `lwm2m_url` – the LwM2M server URL, in this format:
 
-    where coaps indicates secure mode, and coap indicates non-secure mode.
+    ```
+    coap(s)://<server>
+    ```
 
-    If coaps is used but one or more lwm2m files is missing from the datatx folder, then non-secure mode is used.
+    `coaps` indicates secure mode. `coap` indicates non-secure mode.
 
-    For non-secure mode, only the anynet\_thingname\_store file and lwm2m\_url file are required.
+    If `coaps` is used, but a LwM2M file is missing, non-secure mode is used.
 
-LwM2M files require the same 6 byte header as the essential AnyNet files. For more information, see Creating the essential AnyNet files.
+    For non-secure mode, only `anynet_thingname_store` and `lwm2m_url` are required.
+
+LwM2M files require the same six-byte header as the essential AnyNet files. For more information, see Creating the essential AnyNet files.

@@ -10,22 +10,9 @@ Requests a check for new host firmware. Use the Read function to check if new fi
 
 #### Example
 
+```
 AT+ETMHFWGET=862061234567890
-
 OK
-
 +ETMHFWGET: checking...
-
 +ETMHFWGET: none
-
-## Where to next?
-
-* AnyNet SMARTconnect™ AT Commands
-* MQTT AT commands
-* Sending data from your thing to the cloud
-* Sending data from the cloud to your thing
-* +EMQ Unsolicited Response Codes (URCs)
-* Management AT commands
-* +ETM Unsolicited Response Codes (URCs)
-* MQTT Rx Queue
-* General AT Commands
+```

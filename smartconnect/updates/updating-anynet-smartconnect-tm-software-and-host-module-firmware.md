@@ -2,8 +2,8 @@
 
 ### Before you begin
 
-* Using a terminal emulator, ensure AnyNet SMARTconnect™ is connected to the network, with an ETMSTATE of 7. For more information, see [etmstate-check-current-state.md](../at-command-reference/management-at-commands/etmstate-check-current-state.md "mention").
-* Use AT+ETMINFO="imei" to find out and note the Quectel BG95 module IMEI. For more information, see [etminfo-displays-anynet-smartconnect-tm-and-device-information.md](../at-command-reference/management-at-commands/etminfo-displays-anynet-smartconnect-tm-and-device-information.md "mention").
+* Using a terminal emulator, ensure AnyNet SMARTconnect™ is connected to the network, with an ETMSTATE of 7. For more information, see [ETMSTATE – check current state](../at-command-reference/management-at-commands/etmstate-check-current-state.md).
+* Use AT+ETMINFO="imei" to find out and note the Quectel BG95 module IMEI. For more information, see [ETMINFO – displays AnyNet SMARTconnect™ and device information](../at-command-reference/management-at-commands/etminfo-displays-anynet-smartconnect-tm-and-device-information.md).
 *   Eseye supplies the following files for updating AnyNet SMARTconnect™:
 
     * Configuration file (eseyeconfig.ini)
@@ -14,7 +14,7 @@
 
     To request these files, speak to your Account Manager.
 
-    You may choose to create your own configuration file for updating the Quectel BG95 module. For information about the configuration file, see [using-the-anynet-smartconnect-tm-configuration-file.md](../getting-started/using-the-anynet-smartconnect-tm-configuration-file.md "mention").
+    You may choose to create your own configuration file for updating the Quectel BG95 module. For information about the configuration file, see [Using the AnyNet SMARTconnect™ configuration file](../getting-started/using-the-anynet-smartconnect-tm-configuration-file.md).
 * If required, store the update files on a server and note the URLs to each file.
 * If required, store the host firmware update on a server and note the URL to the file.
 
@@ -26,32 +26,37 @@ At each boot, AnyNet SMARTconnect™ checks that the currently running AnyNet SM
 
 ## Updating the AnyNet SMARTconnect™ application and Quectel BG95 module firmware
 
-For information about the AT commands used in this procedure, see [management-at-commands](../at-command-reference/management-at-commands/ "mention").
+For information about the AT commands used in this procedure, see [Management AT commands](../at-command-reference/management-at-commands/).
 
 To update AnyNet SMARTconnect™ application and Quectel BG95 module firmware at the same time:
 
 1.  Set the URL from which to download AnyNet SMARTconnect™ application. Send:
 
-    AT+ETMCFG="application","updateurl","\<http(s)://ETMappURL>"
-
-    where \<http(s)://ETMappURL> is the absolute URL for downloading etm\_application.ota.
-
+    ```
+    AT+ETMCFG="application","updateurl","<http(s)://ETMappURL>"
     OK
+    ```
+
+    `<http(s)://ETMappURL>` is the absolute URL for downloading `etm_application.ota`.
 2.  Set the URL from which to download the Quectel BG95 module update package. Send:
 
+    ```
     AT+ETMCFG="application","fotaurl",""
-
-    where is the absolute URL for downloading .bin.
-
     OK
+    ```
+
+    The URL is the absolute URL for downloading the `.bin` file.
 3.  Save the configuration changes. Send:
 
+    ```
     AT+ETMCFG="save"
-
     OK
+    ```
 4.  Trigger AnyNet SMARTconnect™ application and Quectel BG95 module firmware download and update. Send:
 
+    ```
     AT+ETMFWCHECK
+    ```
 
     AnyNet SMARTconnect™ downloads the new application, then performs a CRC32 check to ensure the file is valid and the new AnyNet SMARTconnect™ version is different from the existing AnyNet SMARTconnect™ version.
 
@@ -63,7 +68,9 @@ To update AnyNet SMARTconnect™ application and Quectel BG95 module firmware at
 
     The following response occurs:
 
+    ```
     +ETMFWCHECK: complete
+    ```
 
     After the download completes, the Quectel BG95 module firmware is updated.
 
@@ -78,30 +85,35 @@ For information about how AnyNet SMARTconnect™ application is stored and used 
 
 ## Updating the AnyNet SMARTconnect™ application only
 
-For information about the AT commands used in this procedure, see [management-at-commands](../at-command-reference/management-at-commands/ "mention").
+For information about the AT commands used in this procedure, see [Management AT commands](../at-command-reference/management-at-commands/).
 
 To update AnyNet SMARTconnect™ application:
 
 1.  Clear the current URL configuration for the Quectel BG95 module firmware update. Send:
 
+    ```
     AT+ETMCFG="remove","application","fotaurl"
-
     OK
+    ```
 2.  Set the URL from which to download AnyNet SMARTconnect™ application. Send:
 
-    AT+ETMCFG="application","updateurl","\<http(s)://ETMappURL>"
-
-    where \<http(s)://ETMappURL> is the absolute URL for downloading etm\_application.ota.
-
+    ```
+    AT+ETMCFG="application","updateurl","<http(s)://ETMappURL>"
     OK
+    ```
+
+    `<http(s)://ETMappURL>` is the absolute URL for downloading `etm_application.ota`.
 3.  Save the configuration changes. Send:
 
+    ```
     AT+ETMCFG="save"
-
     OK
+    ```
 4.  Trigger AnyNet SMARTconnect™ application to download and update AnyNet SMARTconnect™ application. Send:
 
+    ```
     AT+ETMFWCHECK
+    ```
 
     AnyNet SMARTconnect™ downloads the new application, then performs a CRC32 check to ensure the file is valid and the new AnyNet SMARTconnect™ version is different from the existing AnyNet SMARTconnect™ version.
 
@@ -111,67 +123,78 @@ To update AnyNet SMARTconnect™ application:
 
     The following response occurs:
 
+    ```
     +ETMFWCHECK: complete
+    ```
 
     If the configuration file \[operation] update\_autoreboot parameter is set to 1, then AnyNet SMARTconnect™ sends the +ETM: REBOOTING URC and will reboot automatically, otherwise AnyNet SMARTconnect™ sends the +ETM: REBOOT REQUIRED URC.
 5.  If required, reboot the system. Send:
 
+    ```
     AT+ETMRESET
+    ```
 
 Downloading the device host firmware
 
-For information about the AT commands used in this procedure, see [management-at-commands](../at-command-reference/management-at-commands/ "mention").
+For information about the AT commands used in this procedure, see [Management AT commands](../at-command-reference/management-at-commands/).
 
 To download device host firmware:
 
 1.  Set the URL from which to download the device host firmware. Send:
 
-    AT+ETMCFG="host","updateurl","\<http(s)://HostFirmwareURL>"
-
-    where \<http(s)://HostFirmwareURL> is the absolute URL for downloading the host firmware.
-
+    ```
+    AT+ETMCFG="host","updateurl","<http(s)://HostFirmwareURL>"
     OK
+    ```
+
+    `<http(s)://HostFirmwareURL>` is the absolute URL for downloading the host firmware.
 2.  Save the configuration changes. Send:
 
+    ```
     AT+ETMCFG="save"
-
     OK
+    ```
 3.  Trigger the host firmware download. Send:
 
+    ```
     AT+ETMHFWGET
+    ```
 
     The response is either:
 
     * +ETMHFWGET: available – AnyNet SMARTconnect™ successfully downloaded the file.
     * +ETMHFWGET: none – the file download was not successful. Check the URL is correct and accessible, then try AT+ETMHFWGET again.
 
-To read the file, use the AT+ETMHFWREAD command. For more information, see [etmhfwread-reads-a-section-of-the-new-host-firmware-image.md](../at-command-reference/management-at-commands/etmhfwread-reads-a-section-of-the-new-host-firmware-image.md "mention").
+To read the file, use the AT+ETMHFWREAD command. For more information, see [ETMHFWREAD – reads a section of the new host firmware image](../at-command-reference/management-at-commands/etmhfwread-reads-a-section-of-the-new-host-firmware-image.md).
 
-To delete the downloaded file from datatx folder, use the AT+ETMHFWCONF command. For more information, see [etmhfwconf-confirms-the-new-host-firmware-is-applied.md](../at-command-reference/management-at-commands/etmhfwconf-confirms-the-new-host-firmware-is-applied.md "mention").
+To delete the downloaded file from datatx folder, use the AT+ETMHFWCONF command. For more information, see [ETMHFWCONF – confirms the new host firmware is applied](../at-command-reference/management-at-commands/etmhfwconf-confirms-the-new-host-firmware-is-applied.md).
 
 ## Updating the AnyNet SMARTconnect™ configuration file
 
-For information about the AT commands used in this procedure, see [management-at-commands](../at-command-reference/management-at-commands/ "mention").
+For information about the AT commands used in this procedure, see [Management AT commands](../at-command-reference/management-at-commands/).
 
 To update AnyNet SMARTconnect™ configuration file:
 
 1.  Set the URL from which to download AnyNet SMARTconnect™ configuration file. Send:
 
-    AT+ETMCFG="config","updateurl","http(s)://eseyeconfigURL"
-
-    where \<http(s)://eseyeconfigURL> is the absolute URL for downloading _eseyeconfig_.ini.
-
+    ```
+    AT+ETMCFG="config","updateurl","<http(s)://eseyeconfigURL>"
     OK
+    ```
+
+    `<http(s)://eseyeconfigURL>` is the absolute URL for downloading `eseyeconfig.ini`.
 2.  Save the configuration changes. Send:
 
+    ```
     AT+ETMCFG="save"
-
     OK
+    ```
 3.  Trigger the download and update of the configuration file. Send:
 
+    ```
     AT+ETMCFGCHECK
-
     +ETMCFGCHECK: complete
+    ```
 
     AnyNet SMARTconnect™ either reboots automatically (+ETM: REBOOTING) or requires manual rebooting (+ETM: REBOOT REQUIRED) according to the newly updated configuration file \[operation] update\_autoreboot parameter:
 
@@ -181,7 +204,9 @@ To update AnyNet SMARTconnect™ configuration file:
     If the download process fails, check the URL is correct and accessible, then try AT+ETMCFGCHECK again.
 4.  If required, reboot the system. Send:
 
+    ```
     AT+ETMRESET
+    ```
 
 ## Using the MQTT broker to update files
 

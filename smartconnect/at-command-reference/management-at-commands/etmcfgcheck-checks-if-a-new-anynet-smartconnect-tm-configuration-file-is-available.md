@@ -1,31 +1,20 @@
 # ETMCFGCHECK – checks if a new AnyNet SMARTconnect™ configuration file is available
 
-This command checks the \[config] updateurl for a new configuration file.
+This command checks the `[config] updateurl` for a configuration file update.
 
-For more information, see Using the AnyNet SMARTconnect™ configuration file.
+See [Using the AnyNet SMARTconnect™ configuration file](../../getting-started/using-the-anynet-smartconnect-tm-configuration-file.md).
 
-| Type    | Syntax         | Returned Result                                                                                                                                                                                                                                     |
-| ------- | -------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Execute | AT+ETMCFGCHECK | OK +ETMCFGCHECK: checking... +ETMCFGCHECK: complete If a new configuration file needs to be applied, the following URC will also appear: +ETM: REBOOT REQUIRED You must reboot the system as soon as possible. or +ETM ERROR: – the command failed. |
+| Type    | Syntax           | Returned Result                                                 |
+| ------- | ---------------- | --------------------------------------------------------------- |
+| Execute | `AT+ETMCFGCHECK` | `OK`, `+ETMCFGCHECK: checking...`, and `+ETMCFGCHECK: complete` |
 
 #### Example
 
+```
 AT+ETMCFGCHECK
-
 OK
-
 +ETMCFGCHECK: checking...
-
 +ETMCFGCHECK: complete
+```
 
-## Where to next?
-
-* AnyNet SMARTconnect™ AT Commands
-* MQTT AT commands
-* Sending data from your thing to the cloud
-* Sending data from the cloud to your thing
-* +EMQ Unsolicited Response Codes (URCs)
-* Management AT commands
-* +ETM Unsolicited Response Codes (URCs)
-* MQTT Rx Queue
-* General AT Commands
+If an update needs applying, the module also returns `+ETM: REBOOT REQUIRED`. Restart the system. The module returns `+ETM ERROR:` if the command fails.

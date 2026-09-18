@@ -14,32 +14,20 @@ If a host firmware image was previously downloaded using AT+ETMHFWGET, it is sto
 
 To read 46 bytes in 16 byte chunks:
 
+```
 AT+ETMHFWREAD=0,16
-
 +ETMHFWREAD:
-
 OK
+```
 
+```
 AT+ETMHFWREAD=16,16
-
 +ETMHFWREAD:
-
 OK
+```
 
+```
 AT+ETMHFWREAD=32,14
-
 +ETMHFWREAD:
-
 OK
-
-## Where to next?
-
-* AnyNet SMARTconnect™ AT Commands
-* MQTT AT commands
-* Sending data from your thing to the cloud
-* Sending data from the cloud to your thing
-* +EMQ Unsolicited Response Codes (URCs)
-* Management AT commands
-* +ETM Unsolicited Response Codes (URCs)
-* MQTT Rx Queue
-* General AT Commands
+```

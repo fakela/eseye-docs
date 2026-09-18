@@ -21,9 +21,11 @@ Before you use any AT commands on the module, ensure that it is ready to receive
 
 To test that the module is ready to receive AT commands:
 
-*   Using a terminal emulator that is connected to your module, type:
+*   Using a terminal emulator connected to your module, enter:
 
+    ```
     at
+    ```
 
     The terminal emulator will return any of the following:
 
@@ -35,7 +37,11 @@ If you are using AnyNet SMARTconnect™, ensure that it is correctly installed o
 
 To test that AnyNet SMARTconnect™ is ready to receive AnyNet SMARTconnect™ AT commands:
 
-*   Using a terminal emulator that is connected to your module, type: at+etminfo=version
+*   Using a terminal emulator connected to your module, enter:
+
+    ```
+    at+etminfo=version
+    ```
 
     The terminal emulator will return either of the following:
 
@@ -48,7 +54,9 @@ To test that AnyNet SMARTconnect™ is ready to receive AnyNet SMARTconnect™ A
 
 Use the following syntax:
 
+```
 AT+
+```
 
 where:
 
@@ -74,10 +82,9 @@ The response may include:
 
 ## Types of AT Commands and responses
 
-| Command type | Command syntax | Description                                                                                                                                         |
-| ------------ | -------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Test         | AT+=?          | Returns a list of parameters and value ranges set by the corresponding Write command or internal processes.                                         |
-| Read         | AT+?           | Returns the currently set value of each parameter.                                                                                                  |
-| Write        | AT+=           | Sets the user-defined parameter values.                                                                                                             |
-| Execute      | AT+            | Reads non-variable parameters affected by internal processes in the Eseye-enabled modem. For example, see CCID – request unique SIM number (ICCID). |
-
+| Command type | Command syntax | Description                                                                                                                                                                                                        |
+| ------------ | -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Test         | `AT+=?`        | Returns a list of parameters and value ranges set by the corresponding Write command or internal processes.                                                                                                        |
+| Read         | `AT+?`         | Returns the currently set value of each parameter.                                                                                                                                                                 |
+| Write        | `AT+=`         | Sets the user-defined parameter values.                                                                                                                                                                            |
+| Execute      | `AT+`          | Reads non-variable parameters affected by internal processes in the Eseye-enabled modem. For example, see [CCID – request unique SIM number (ICCID)](general-at-commands/ccid-request-unique-sim-number-iccid.md). |

@@ -10,20 +10,8 @@ Checks the current state of the LTE IoT 2 click.
 
 #### Example
 
+```
 AT+ETMSTATE?
-
 +ETMSTATE: 0
-
 OK
-
-## Where to next?
-
-* AnyNet SMARTconnect™ AT Commands
-* MQTT AT commands
-* Sending data from your thing to the cloud
-* Sending data from the cloud to your thing
-* +EMQ Unsolicited Response Codes (URCs)
-* Management AT commands
-* +ETM Unsolicited Response Codes (URCs)
-* MQTT Rx Queue
-* General AT Commands
+```

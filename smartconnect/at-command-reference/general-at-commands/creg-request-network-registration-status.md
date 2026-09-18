@@ -1,12 +1,85 @@
 # CREG – request network registration status
 
-Verifies the current network registration status of the module. First set the Mode to determine which information is displayed, and if it's displayed automatically when a change occurs.
+Verifies the current network registration status of the module. Set the mode first to control the returned information and automatic status updates.
 
-| Type  | Syntax                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         | Returned Result                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
-| ----- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Test  | AT+CREG=?                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      | +CREG: (0-2) OK                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
-| Read  | AT+CREG? Perform the Write command first so that you can set the returned details of the Read command.                                                                                                                                                                                                                                                                                                                                                                                                                                                                         | The response depends on which mode you selected in the write command. The initial number returned is the mode. If the mode = 0, the following response occurs: +CREG: 0, OK If the mode = 1, the following response occurs: +CREG: 1, OK If the mode = 2, the following response occurs: +CREG: 2,\[,,\[,]] where: - is the registration status, either: - 0 – Not registered, the device is currently not searching for new operator. - 1 – Registered to home network. - 2 – Not registered, but the device is currently searching for a new operator. - 3 – Registration denied. - 4 – Unknown. For example, out of range. - 5 – Registered, roaming. The device is registered on a foreign (national or international) network. - is a two byte location area code in hexadecimal format - is the Cell ID in hexadecimal format, either: - 16 bit for 2G - 28 bit for 3G or 4G - is radio access technology, either: - 0 – GSM - 2 – UTRAN - 3 – GSM w/EGPRS - 4 – UTRAN w/HSDPA - 5 – UTRAN w/HSUPA - 6 – UTRAN w/HSDPA and w/HSUPA - 7 – E-UTRAN or ERROR – the command failed. |
-| Write | AT+CREG= where is either: - 0 – Disable network registration unsolicited result code. You will need to manually check the network registration status. - 1 – Enable network registration unsolicited result code. If there is a change in network registration status, the modem will automatically return a response. - 2 – Enable network registration and location information unsolicited result code. If there is a change in network registration status or at least one of the additional network information elements, the modem will automatically return a response. | OK - the network registration status mode is successfully set ERROR - the command failed                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+### Test command
+
+Run the command:
+
+```
+AT+CREG=?
+```
+
+The module returns:
+
+```
++CREG: (0-2)
+OK
+```
+
+### Read command
+
+Set the mode with the Write command before running:
+
+```
+AT+CREG?
+```
+
+The response depends on the selected mode. The first number is the mode:
+
+```
++CREG: 0
+OK
+```
+
+```
++CREG: 1
+OK
+```
+
+```
++CREG: 2,[,,[,]]
+```
+
+For mode `2`, the response includes:
+
+* The registration status:
+  * `0` — Not registered. The device is not searching for an operator.
+  * `1` — Registered on the home network.
+  * `2` — Not registered, but searching for an operator.
+  * `3` — Registration denied.
+  * `4` — Unknown, for example, when the device is out of range.
+  * `5` — Registered while roaming on a foreign network.
+* A two-byte location area code in hexadecimal format.
+* A cell ID in hexadecimal format:
+  * `16` bit for 2G.
+  * `28` bit for 3G or 4G.
+* The radio access technology:
+  * `0` — GSM.
+  * `2` — UTRAN.
+  * `3` — GSM with EGPRS.
+  * `4` — UTRAN with HSDPA.
+  * `5` — UTRAN with HSUPA.
+  * `6` — UTRAN with HSDPA and HSUPA.
+  * `7` — E-UTRAN.
+
+The module returns `ERROR` if the command fails.
+
+### Write command
+
+Run the command:
+
+```
+AT+CREG=
+```
+
+Set the value to one of the following:
+
+* `0` — Disable unsolicited network registration results. Check the registration status manually.
+* `1` — Enable unsolicited network registration results. The modem returns a response when the status changes.
+* `2` — Enable unsolicited network registration and location information results. The modem returns a response when the registration status or additional network information changes.
+
+The module returns `OK` when it sets the mode. It returns `ERROR` if the command fails.
 
 Factors contributing to SIM failure to register on the network may include:
 
@@ -16,12 +89,17 @@ Factors contributing to SIM failure to register on the network may include:
 
 #### Example
 
+Set the mode:
+
+```
 AT+CREG=2
-
 OK
+```
 
+Read the registration status:
+
+```
 AT+CREG?
-
 +CREG: 2,5,"54DB","0F6B0578",7
-
 OK
+```

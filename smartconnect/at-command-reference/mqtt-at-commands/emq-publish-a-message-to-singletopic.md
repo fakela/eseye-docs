@@ -1,29 +1,36 @@
 # EMQ – publish a message to singletopic
 
-Publish a message to the system singlepubtopic. singlepubtopic is a predefined topic for single-subscription systems, where the host is not expected to register a publish topic with +EMQPUBOPEN. The publish topic (singlepubtopic) and QoS (singlepubtopicqos) are defined in the configuration file. For more information, see the \[MQTT] section, Using the AnyNet SMARTconnect™ configuration file. The index is not required.
+Publish a message to the system `singlepubtopic`. `singlepubtopic` is a predefined topic for single-subscription systems. The host does not need to register a publish topic with `+EMQPUBOPEN`.
 
-| Type  | Syntax                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   | Returned Result                                                                                                                                                                                                                                                                                                                                                                                                                      |
-| ----- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Test  | AT+EMQ=?                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 | +EMQ: OK                                                                                                                                                                                                                                                                                                                                                                                                                             |
-| Read  | AT+EMQ?                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  | OK or ERROR                                                                                                                                                                                                                                                                                                                                                                                                                          |
-| Write | AT+EMQ= where – is the published message. If is not contained within quotes, it is sent as text with no modification. The maximum payload length is 1000 characters. All characters must be printable. If "" is contained within quotes, it is handled as ASCII-hex. If "{" includes an open brace immediately after the inital quote, it is handled as a JSON string. AnyNet SMARTconnect™ does not verify the JSON string validity. AnyNet SMARTconnect™ handles "" as ASCII-hex if it contains an even number of valid ASCII-hex characters (0-9, a-f, A-F). ASCII-hex is converted to binary for transmission. For JSON messages, \ (escape characters) are removed. | OK – command result :SEND OK – subsequent URC that is sent when publish occurs. This will not happen immediately if AnyNet SMARTconnect™ is offline. or +ETM ERROR: – returned for an AT command-specific error. Check that \[MQTT] singlepubtopic is configured in the configuration file. For more information, see singlepubtopic. or ERROR – returned when a command is invalid, for example a parameter is missing or incorrect |
+The configuration file defines the publish topic and QoS. The topic index is not required. See [Using the AnyNet SMARTconnect™ configuration file](../../getting-started/using-the-anynet-smartconnect-tm-configuration-file.md).
+
+| Type  | Syntax     | Returned result                             |
+| ----- | ---------- | ------------------------------------------- |
+| Test  | `AT+EMQ=?` | `+EMQ: OK`                                  |
+| Read  | `AT+EMQ?`  | `OK` or `ERROR`                             |
+| Write | `AT+EMQ=`  | `OK`, `:SEND OK`, `+ETM ERROR:`, or `ERROR` |
+
+For the Write command:
+
+* Send an unquoted message as unmodified text.
+* Limit the payload to `1000` printable characters.
+* Send quoted ASCII-hex data with an even number of characters from `0-9`, `a-f`, or `A-F`.
+* Start quoted JSON data with `{` immediately after the opening quote. AnyNet SMARTconnect™ does not validate JSON.
+* AnyNet SMARTconnect™ converts ASCII-hex to binary for transmission. It removes escape characters from JSON messages.
+
+The module returns `:SEND OK` after it publishes the message. This may wait until AnyNet SMARTconnect™ reconnects. The module returns `+ETM ERROR:` for command-specific errors. Confirm that `singlepubtopic` is configured. The module returns `ERROR` when the command is invalid or a parameter is missing.
 
 #### Example
 
+Send the message:
+
+```
 AT+EMQ="{"BatteryPower": "Low"}"
+```
 
+The module returns:
+
+```
 OK
-
 :SEND OK
-
-## Where to next?
-
-* AnyNet SMARTconnect™ AT Commands
-* MQTT AT commands
-* Sending data from your thing to the cloud
-* Sending data from the cloud to your thing
-* +EMQ Unsolicited Response Codes (URCs)
-* Management AT commands
-* +ETM Unsolicited Response Codes (URCs)
-* MQTT Rx Queue
-* General AT Commands
+```

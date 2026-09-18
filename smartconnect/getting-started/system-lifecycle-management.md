@@ -11,6 +11,6 @@ The lifecycle management process involves:
 5. Providing ongoing maintenance and support for software and firmware on devices, including managing updates, security patches, bug fixes, and so on.
 6. Retiring software, firmware, and devices when they reach the end of their useful life.
 
-We supply AnyNet SMARTconnect™ to help you deploy and maintain your device software and firmware. For more information, see [..](../ "mention").
+We supply AnyNet SMARTconnect™ to help you deploy and maintain your device software and firmware. For more information, see [About AnyNet SMARTconnect™](../).
 
 Lifecycle management is becoming increasingly important as the number of connected devices continues to grow, and the complexity of software and firmware running on these devices increases.

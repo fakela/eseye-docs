@@ -2,28 +2,27 @@
 
 Publish data to a created message topic. Data is sent to your thing in the cloud.
 
-| Type  | Syntax                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 | Returned Result                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
-| ----- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Test  | AT+EMQPUBLISH=?                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        | +EMQPUBLISH: (0-7),(0-1), OK                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
-| Read  | AT+EMQPUBLISH?                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         | OK                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
-| Write | AT+EMQPUBLISH=(0-7),(0-1), where: - (0-7) is the publish index number - (0-1) is the Quality of Service, either: - 0 – sends the message without guaranteeing message receipt. The message is not stored on the sender, and is not acknowledged. - 1 – guarantees the message is delivered at least once. - – is the published message. If is not contained within quotes, it is sent as text with no modification. The maximum payload length is 1000 characters. All characters must be printable. If "" is contained within quotes, it is handled as ASCII-hex. If "{" includes an open brace immediately after the inital quote, it is handled as a JSON string. AnyNet SMARTconnect™ does not verify the JSON string validity. AnyNet SMARTconnect™ handles "" as ASCII-hex if it contains an even number of valid ASCII-hex characters (0-9, a-f, A-F). ASCII-hex is converted to binary for transmission. For JSON messages, \ (escape characters) are removed. | OK – successfully wrote the command ERROR – the command failed. Check your syntax, and that you have already set up the publish topic using at+emqpubopen?. Also check you have sent the AT+ETMSTATE="startmqtt" command to enable MQTT. :SEND OK – send confirmation relating to Quality of Service. This response is for: - QoS=0 – message is published - QoS=1 – MQTT broker generates a PUBACK to confirm receipt of the MQTT message :SEND FAIL - send failure for QoS=1 only. |
+| Type  | Syntax                       | Returned result                               |
+| ----- | ---------------------------- | --------------------------------------------- |
+| Test  | `AT+EMQPUBLISH=?`            | Available topic indexes, QoS values, and `OK` |
+| Read  | `AT+EMQPUBLISH?`             | `OK`                                          |
+| Write | `AT+EMQPUBLISH=(0-7),(0-1),` | `OK`, `ERROR`, `:SEND OK`, or `:SEND FAIL`    |
+
+For the Write command:
+
+* Set the publish topic index from `0` through `7`.
+* Set QoS to `0` for at-most-once delivery or `1` for at-least-once delivery.
+* Send an unquoted message as unmodified text.
+* Limit the payload to `1000` printable characters.
+* Send quoted ASCII-hex data with an even number of characters from `0-9`, `a-f`, or `A-F`.
+* Start quoted JSON data with `{` immediately after the opening quote. AnyNet SMARTconnect™ does not validate JSON.
+
+The module returns `:SEND OK` when it publishes the message. For QoS `1`, the broker sends a `PUBACK` to confirm receipt. `:SEND FAIL` applies only to QoS `1`. If the module returns `ERROR`, check that [EMQPUBOPEN – create a publish message topic](emqpubopen-create-a-publish-message-topic.md) has configured the topic and [ETMSTATE – check current state](../management-at-commands/etmstate-check-current-state.md) has started MQTT.
 
 #### Example
 
+```
 AT+EMQPUBLISH=1,1,"{"BatteryPower": "Low"}"
-
 OK
-
 :SEND OK
-
-## Where to next?
-
-* AnyNet SMARTconnect™ AT Commands
-* MQTT AT commands
-* Sending data from your thing to the cloud
-* Sending data from the cloud to your thing
-* +EMQ Unsolicited Response Codes (URCs)
-* Management AT commands
-* +ETM Unsolicited Response Codes (URCs)
-* MQTT Rx Queue
-* General AT Commands
+```
