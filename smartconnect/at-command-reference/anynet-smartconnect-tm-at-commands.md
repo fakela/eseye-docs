@@ -1,4 +1,4 @@
-# AT commands
+# AnyNet SMARTconnect™ AT Commands
 
 AT commands (Hayes command set) are instructions for controlling modules. The commands consist of a series of short text strings for a range of uses, including:
 
@@ -11,7 +11,9 @@ AT commands (Hayes command set) are instructions for controlling modules. The co
 
 Your software must send test, read and write AT commands to your module.
 
-Search the module supplier documentation for a full set of the AT commands you can use on your module. For example, Quectel supply the BG95\&BG77\&BG600L Series AT Commands Manual (PDF). (Note, this link may not point to the latest version).
+{% hint style="info" %}
+Search the module supplier documentation for a full set of the AT commands you can use on your module. This link may not point to the latest version.
+{% endhint %}
 
 AnyNet SMARTconnect™ AT commands extend the available AT commands on your AnyNet SMARTconnect™-enabled module.
 
@@ -29,8 +31,8 @@ To test that the module is ready to receive AT commands:
 
     The terminal emulator will return any of the following:
 
-    * OK – the module and port are connected and ready to communicate
-    * ERROR – the module and port cannot communicate. Contact the modem supplier.
+    * `OK` – The module and port are connected and ready to communicate.
+    * `ERROR` – The module and port cannot communicate. Contact the modem supplier.
     * Nothing – ensure you have set the correct baud rate in your code. For more information, see Connecting to the Quectel module using a terminal emulator.
 
 If you are using AnyNet SMARTconnect™, ensure that it is correctly installed on the modem. For more information, see Installing AnyNet SMARTconnect™ on a Quectel BGxx module.
@@ -48,37 +50,41 @@ To test that AnyNet SMARTconnect™ is ready to receive AnyNet SMARTconnect™ A
     *   AnyNet SMARTconnect™ V, where is the current software version – the module is ready to receive AnyNet SMARTconnect™ AT commands.
 
         Verify that the version number is AnyNet SMARTconnect™ V0.99\_ma or higher.
-    * ERROR – AnyNet SMARTconnect™ software has not yet initialised. Try again in 5 seconds.
+    * `ERROR` – AnyNet SMARTconnect™ software has not yet initialised. Try again in 5 seconds.
 
-## AT Command syntax
+### AT command syntax
 
 Use the following syntax:
 
-```
-AT+
-```
+`AT+<COMMAND><CR>`
 
-where:
+Where:
 
-* AT is in upper or lowercase
-* is a test, read or write command in upper or lower case
-*   is the end-of-line character marking the end of a command line (alias \r – carriage return)
+* `AT` is uppercase or lowercase.
+* `<COMMAND>` is a test, read, or write command in uppercase or lowercase.
+*   `<CR>` is the end-of-line character. It is also called carriage return (`\r`).
 
-    The modem will execute the command line after receiving the end-of-line character.
-* is the line feed, which will move the cursor to the next line
+    The modem executes the command after receiving `<CR>`.
+* `<LF>` is the line feed character. It moves the cursor to the next line.
 
-This document displays commands only. after a command is intentionally omitted.
+{% hint style="info" %}
+This document displays commands only. `<CR><LF>` after a command is intentionally omitted.
+{% endhint %}
 
-AT commands are usually followed by a response that includes:
+AT commands are usually followed by a response:
 
-where is the command response
+`<CR><LF><RESPONSE><CR><LF>`
 
-This document displays responses only. is intentionally omitted.
+`<RESPONSE>` is the command response.
+
+{% hint style="info" %}
+This document displays responses only. `<CR><LF>` is intentionally omitted.
+{% endhint %}
 
 The response may include:
 
-* OK – indicates the command executed with no errors
-* ERROR – indicates an invalid command, or that the command line was too long
+* `OK` – The command executed without errors.
+* `ERROR` – The command is invalid, or the command line is too long.
 
 ## Types of AT Commands and responses
 
