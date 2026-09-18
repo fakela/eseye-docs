@@ -32,6 +32,19 @@ You can order Eseye AnyNet Secure SIM cards in the following form factors (FF):
 
     The embedded (MFF) SIM is an integrated circuit that’s designed to be permanently soldered into an IoT device. It has eight electrical pins, which are the same as the eight gold contacts on removable SIMs.
 
+### Embedded form factors
+
+* MFF2 (eSIM), soldered to the board for devices in vibration or high humidity.
+* USON-8, a smaller embedded package for space-constrained designs.
+* Integrated SIM (iSIM), built into the modem or module itself.
+
+## Choosing a form factor
+
+1. Check which form factors the modem or module supports.
+2. Decide whether the SIM needs to be removable in the field.
+3. Consider vibration, temperature and humidity where the device will run.
+4. Confirm the board has space for the package you choose.
+
 ## Comparing AnyNet SIM specifications
 
 The specifications and supported features for the AnyNet+ SIM versions are provided in the table below and more detailed information is provided in the following datasheets:
